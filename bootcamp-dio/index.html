@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vagner Fortunato</title>
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="main.js"></script>
 </head>
 <body>
     <header>
@@ -20,8 +21,25 @@
                 <h3 class="post_title">Post #1</h3>
                 <img src="luca-bravo-program-code(1) (1).jpg" alt="Código html em editor de código." class="post_image">
             </header>
+            <!--<p id="hover" onmouseover="trocar()" onmouseout="voltar()">Passe o mouse aqui!</p> SEM this, utilizado junto com function opção 1 (main.js)-->
+            <p id="hover" onmouseover="trocar(this)" onmouseout="voltar(this)">Passe o mouse aqui!</p> <!--neste caso posso retirar o id-->
+
             <p class="post_content">Lorem ipsum dolor sit amet <a href="https://www.linkedin.com/in/vagnerfortunato/" target="_blanket">consectetur adipisicing elit</a>. Quisquam aspernatur accusamus mollitia quod? Dicta, reiciendis provident quas cumque minima laudantium assumenda error non nihil debitis, <a href="mailto:vagnerfortunato@live.com">vitae</a>, nemo tempore est iusto?<br>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia aliquid modi tempore dolore perspiciatis, eaque eius dignissimos, quibusdam excepturi numquam cupiditate ad fuga rerum nostrum, repellendus eveniet? Veniam, mollitia corporis.</p>
+
+            <p id="hover2" onmouseover="trocar(this)" onmouseout="voltar(this)">Passe o mouse aqui!</p> <!--neste caso posso retirar o id-->
+
+            <select onchange="function_change(this)">
+                <option value="0">Escolha:</option>
+                <option value="1">Valor 1</option>
+                <option value="2">Valor 2</option>
+                <option value="3">Valor 3</option>
+            </select>
+
+            <button type="button" onclick="clicou()">Clique aqui para agradecimento.</button>
+
+            <button type="button" onclick="redirecionar()">Clique aqui para GitHub.</button>
+            <p id="agradecimento"></p>
         </article>
     </section>
     <footer>
