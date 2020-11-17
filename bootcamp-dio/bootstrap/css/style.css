@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, Sans-serif;
+    font-size: 20px;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.295);
+}
+
+.quem-somos {
+    background-color: #71C504;
+}
+
+.margin {
+    /*margin-top: 30px; forma uma margem fora do elemento*/
+    padding: 50px;
+}
+
+.parceiros {
+    background-color: #19A4E1;
+}
+
+.serviços {
+    background-color: #F28D06;
+}
+
+.footer-bg {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    background-color: #B4B4B4;
+}
