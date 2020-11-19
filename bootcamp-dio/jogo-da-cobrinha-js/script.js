@@ -1,17 +1,16 @@
-let canvas = document.getElementById("cobra");
+let canvas = document.getElementById("snake");
 let context = canvas.getContext("2d"); /* contexto em dimensão 2D */
 let box = 32;
-let cobra = [];
-cobra[0] = {
+let snake = [];
+snake[0] = {
     x: 8 * box,
     y: 8 * box
 }
 let direction = "right";
-let comida = {
+let food = {
     x: Math.floor(Math.random() * 15 + 1) * box,
     y: Math.floor(Math.random() * 15 + 1) * box
 }
-
 
 function criarBG() { /* define background */
     context.fillStyle = "lightgreen"; /* fillStyle define a cor que será aplicada */
@@ -19,13 +18,13 @@ function criarBG() { /* define background */
 }
 
 function criarCobrinha() {
-    for(i=0; i < cobra.length; i++){
+    for(i=0; i < snake.length; i++){
         context.fillStyle = "green";
-        context.fillRect(cobra[i].x, cobra[i].y, box, box);
+        context.fillRect(snake[i].x, snake[i].y, box, box);
     }
 }
 
-function criarComida() {
+function drawFood() {
     context.fillStyle = "red";
     context.fillRect(food.x, food.y, box, box);
 }
@@ -39,46 +38,50 @@ function update(event) {
     if(event.keyCode == 40 && direction != "up") direction = "down";
 }
 
+/* plays the game */
 function iniciarJogo(){
-    if(cobra[0].x > 15 * box && direction == 'right') cobra[0].x = 0;
-    if(cobra[0].x < 0 && direction == 'left') cobra[0].x = 16 * box;
-    if(cobra[0].y > 15 * box && direction == 'down') cobra[0].y = 0;
-    if(cobra[0].y < 0 && direction == 'up') cobra[0].y = 16 * box;
+    if(snake[0].x > 15 * box && direction == 'right') snake[0].x = 0;
+    if(snake[0].x < 0 && direction == 'left') snake[0].x = 16 * box;
+    if(snake[0].y > 15 * box && direction == 'down') snake[0].y = 0;
+    if(snake[0].y < 0 && direction == 'up') snake[0].y = 16 * box;
 
-    for(i = 1; i < cobra.length; i++){
-        if(cobra[0].x == cobra[i].x && cobra[0].y == cobra[i].y){
+    /* stops game if snake hits itself */
+    for(i = 1; i < snake.length; i++){
+        if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
             clearInterval(jogo);
             alert('Game Over :(')
         }
     }
 
+    /* call the function */
     criarBG();
     criarCobrinha();
-    criarComida();
+    drawFood();
 
-    let cobraX = cobra[0].x;
-    let cobraY = cobra[0].y;
+    let snakeX = snake[0].x;
+    let snakeY = snake[0].y;
 
-    if(direction == 'right') cobraX += box;
-    if(direction == 'left') cobraX -= box;
-    if(direction == 'down') cobraY += box;
-    if(direction == 'up') cobraY -= box;
+    if(direction == 'right') snakeX += box;
+    if(direction == 'left') snakeX -= box;
+    if(direction == 'down') snakeY += box;
+    if(direction == 'up') snakeY -= box;
 
-    if (cobraX != comida.x || cobraY != comida.y) {
-        cobra.pop();
+    /* aleatory food */
+    if (snakeX != food.x || snakeY != food.y) {
+        snake.pop();
     }
     else {
-        comida.x = Math.floor(Math.random() * 15 + 1) * box;
-        comida.y = Math.floor(Math.random() * 15 + 1) * box;
+        food.x = Math.floor(Math.random() * 15 + 1) * box;
+        food.y = Math.floor(Math.random() * 15 + 1) * box;
 
     }
 
     let newHead = {
-        x: cobraX,
-        y: cobraY
+        x: snakeX,
+        y: snakeY
     }
 
-    cobra.unshift(newHead);
+    snake.unshift(newHead);
     
 }
 
