@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site modelo</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+        <ul>
+            <li><a href="#HTML">HTML</a></li>
+            <ul>
+                <li><a href="#">Nível de hierarquia das tags</a></li>
+                <li><a href="#"></a>main</li>
+                <li><a href="#"></a>article</li>
+                <li><a href="#"></a>header</li>
+                <li><a href="#"></a>nav</li>
+            </ul>
+            <li><a href="#CSS">CSS</a></li>
+            <li><a href="#JavaScript">JavaScript</a></li>
+        </ul>
+        </nav>
+
+        <h1>Site de estudos</h1>
+    </header>
+
+    <main>
+
+        <section id="HTML">
+            <h2>HTML</h2>
+            <article>
+                <h3>Nível de hierarquia das tags</h3>
+                <p>&lt;h1&gt; &lt;/h1&gt;<br>
+                    &lt;h2&gt; &lt;/h2&gt;<br>
+                    &lt;h3&gt; &lt;/h3&gt;<br>
+                    &lt;h4&gt; &lt;/h4&gt;<br>
+                    &lt;h5&gt; &lt;/h5&gt;<br>
+                    &lt;h6&gt; &lt;/h6&gt;
+                </p>
+                <p>Cada elemento h possui um nível de hierarquia informando aos mecaniscos de buscas a hierarquia de conteúdos da página, começando do h1 e indo até o h6.</p>
+                <p>Não se trata de tamanho de texto. No HTML o objetivo é dar valor semântico às tags. Uma vez que o tamanho é um ajuste na forma, essa alteração deve ser feita por meio do CSS.</p>
+            </article>
+        
+            <h3>Main</h3>
+            <p>A tag <mark>main</mark> serve para os leitores de acessibilidade identificar o conteúdo principal da página.</p>
+        
+            <h3>Article</h3>
+            <h4>Envelopar conteúdo em um elemento article</h4>
+            <p><mark>article</mark> é outro elemento do HTML5 que adiciona significado semântico para a marcação. É um elemento de seção e é usado para envelopar conteúdos independentes. Funciona bem em blogs, fóruns ou artigos de notícias.</p>
+            <p>Considere o exemplo, se um livro é um <mark>article</mark>, então cada capítulo é uma <mark>section</mark>. Um <mark>article</mark> é utilizado para "standalone content" (conteúdo isolado ou um conteúdo como um todo), e uma <mark>section</mark> para agrupar conteúdos relacionados de acordo com a temática. Quando não houver relação entre os conteúdos, então deve-se utilizar uma <mark>div</mark>.</p>
+            <p>&lt;div&gt; - grupos de conteúdo <br>
+            &lt;section&gt; - grupos de conteúdos relacionados <br>
+            &lt;article&gt; - conteúdo independente</p>
+        
+            <h3>Header</h3>
+            <h4>Tornar a leitura da tela mais fácil</h4>
+            <p>Utilizado para envelopar informação introdutória ou links de navegação para suas tags pais, e funciona bem em torno de conteúdos que se repetem no topo de multiplas páginas.</p>
+            <p>O <mark>header
+            </mark> é para ser utilizado no <mark>body</mark> da página, que é diferente do <mark>head</mark>, que contém o título da página, meta informações, etc.</p>
+        
+            <h3>Nav</h3>
+            <h4>Tornar a navegação do leitor mais fácil com o elemento nav</h4>
+            <p>Essa tag serve para envelopar os principais links de navegação na página (menu).</p>
+            <p>Se vários links forem utilizados no fim da página (rodapé) não é necessário marcá-los com a tag <mark>nav</mark>. Usar o <mark>footer</mark> neste caso será suficiente.</p>
+        </section>
+
+        <section id="CSS">
+            <h2>CSS</h2>
+
+        </section>
+
+        <section id="JavaScript">
+            <h2>JavaScript</h2>
+
+        </section>
+    </main>
+</body>
+</html>
